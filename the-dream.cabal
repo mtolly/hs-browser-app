@@ -10,6 +10,7 @@ executable the-dream
   other-modules:
     Dream.JS
     Dream.HTML
+    Dream.CSS
   build-depends:
     base >= 4.8 && < 5
     , transformers
@@ -17,5 +18,4 @@ executable the-dream
     , ghcjs-base
     , jquery
   default-language:     Haskell2010
-  js-sources:           jquery/jquery-2.1.4.js
   ghc-options:          -Wall

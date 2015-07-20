@@ -111,14 +111,6 @@ onclick act = do
     cb <- asyncCallback (DomRetain $ castRef elt) act
     js_onclick elt cb
 
-{-
-style :: (MonadIO m) => T.Text -> [(T.Text, T.Text)] -> HTMLT m ()
-style ctxt kvs = "style" </ do
-  "type" $= "text/css"
-  let rules = T.unwords [ k <> ": " <> v <> ";" | (k, v) <- kvs ]
-  html $ ctxt <> " { " <> rules <> " } "
--}
-
 foreign import javascript unsafe
   "$1.checked"
   js_checked :: Element -> IO Bool

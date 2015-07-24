@@ -12,7 +12,7 @@ main :: IO ()
 main = do
   runHTMLT body $ do
     "p" </ do
-      version <- liftIO $ fromJSString <$> prop jq "jquery"
+      version <- liftIO $ fromJSString <$> prop (prop jq "fn") "jquery"
       html $ "jQuery version " <> version
   addStyle $ do
     sel "body" $ do

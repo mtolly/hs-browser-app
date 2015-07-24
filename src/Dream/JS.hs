@@ -3,12 +3,8 @@ module Dream.JS where
 
 import GHCJS.Types
 import GHCJS.Foreign
-import Dream.JQuery
 
 type JS a = IO (JSRef a)
-
-jq :: JS a
-jq = return jQuery
 
 foreign import javascript unsafe "'' + $1"
   js_showJSRef :: JSRef a -> IO JSString
@@ -38,3 +34,6 @@ foreign import javascript unsafe "window[$1]"
 
 window :: String -> JS a
 window = js_window . toJSString
+
+jq :: JS a
+jq = window "$"

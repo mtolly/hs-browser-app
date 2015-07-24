@@ -16,6 +16,6 @@ executable the-dream
     , transformers
     , text
     , ghcjs-base
-    , jquery
   default-language:     Haskell2010
   ghc-options:          -Wall
+  js-sources:           jquery/jquery-2.1.4.js
